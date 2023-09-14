@@ -1,5 +1,5 @@
-import { Inter } from 'next/font/google'
-import './globals.css'
+import { Inter } from 'next/font/google';
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,8 +11,15 @@ export const metadata = {
 const RootLayout=({ children })=> {
   return (
     <html lang="en">
-      <body>
-        <div>Header menu</div>
+      <body className='max-w-7xl m-auto p-3'>
+        <nav>
+          <ul className='flex gap-2'>
+            <li><a className='btn-outline border-green-700 rounded-sm border-[2px] p-1' href="/">Home</a></li>
+            <li><a className='btn-outline border-green-700 rounded-sm border-[2px] p-1' href="/profile">Profile</a></li>
+            <li><a className='btn-outline border-green-700 rounded-sm border-[2px] p-1' href="/dashboard">Dashboard</a></li>
+            <li><a className='btn-outline border-green-700 rounded-sm border-[2px] p-1' href="/blog">Blogs</a></li>
+          </ul>
+        </nav>
           {children}
         <div>Footer section</div>
       </body>
