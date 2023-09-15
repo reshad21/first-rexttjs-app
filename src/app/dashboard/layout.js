@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Sidebar from "./Sidebar";
 
 export const metadata = {
     title: 'Dashboard | Next Hero',
@@ -6,11 +6,8 @@ export const metadata = {
 }
 const DashboardLayout = ({ children }) => {
     return (
-        <div>
-            <div className="flex gap-2">
-                <Link href="/" className="rounded-lg border-[2px] border-slate-900 px-3 py-1">sidebar</Link>
-                <Link href="/" className="rounded-lg border-[2px] border-slate-900 p-2">Home</Link>
-            </div>
+        <div className="flex gap-2 ">
+            <Sidebar></Sidebar>
             {children}
         </div>
     );
