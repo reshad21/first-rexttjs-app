@@ -30,7 +30,7 @@ const blogsItem = [
 const BlogsPage = () => {
     return (
         <div>
-            <h1>This is blog page and total blog: {blogsItem.length}</h1>
+            <h1 className="my-2">This is blog page and total blog: {blogsItem.length}</h1>
             {
                 blogsItem.map(({ id, year, title }) => (
                         <div className="border border-blue-800 mb-2 p-3" key={id}>
