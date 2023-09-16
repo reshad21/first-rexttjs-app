@@ -1,7 +1,7 @@
 
 const SinglePage = ({ params }) => {
-    // console.log(params.segments);
-    const [id, year] = params.segments || [];
+    console.log(params.segments);
+    const [year, id] = params.segments || [];
     return (
         <div>
             <h1>This post published on {year || new Date().getFullYear()} and post id is {id || ""}</h1>
