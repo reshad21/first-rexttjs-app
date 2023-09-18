@@ -1,10 +1,24 @@
+import loadBlogData from "@/app/utils/loadBlogData";
 import loadSingleBlogData from "@/app/utils/loadSingleBlogData";
 
-const SinglePage = async({ params }) => {
-    const {id} = params || {};
+export const generateMetadata = async ({ params }) => {
+    const { title } = await loadSingleBlogData(params.id)
+    return {
+        title: title,
+    }
+}
+
+export const generateStaticParams = async () => {
+    const blogs = await loadBlogData();
+    return blogs.map(({ id }) => ({
+        id: id.toString(),
+    }))
+}
+
+const SinglePage = async ({ params }) => {
+    const { id } = params || {};
     const singleDetails = await loadSingleBlogData(id);
-    console.log(singleDetails);
-    const {title,body} = singleDetails;
+    const { title, body } = singleDetails;
 
     return (
         <div>
