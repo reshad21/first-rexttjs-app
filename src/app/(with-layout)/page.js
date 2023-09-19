@@ -1,7 +1,11 @@
+import Categories from "../components/Homepage/Categories";
 
 const HomePage = () => {
   return (
-    <h1>This is website content</h1>
+    <div className="">
+      <h1>Home Pages</h1>
+      <Categories />
+    </div>
   )
 }
 export default HomePage;
