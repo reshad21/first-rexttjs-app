@@ -4,7 +4,7 @@ const SingleCategory = ({ category }) => {
     const { name, id, image_url } = category;
     return (
         <div>
-            <Link href={`/categories?id=${id}`}>{name}</Link>
+            <Link href={`/products?categoryId=${id}`}>{name}</Link>
         </div>
     );
 };
