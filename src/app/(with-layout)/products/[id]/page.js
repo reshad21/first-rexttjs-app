@@ -4,9 +4,8 @@ const page = async ({ params }) => {
     // console.log(params.id);
     const product = await getSingleProduct(params.id);
     return (
-        <div>
-            <h1>Single product information</h1>
-            <h2>Product Name: {product.title}</h2>
+        <div className="my-3 border border-green-800 block rounded-lg shadow-lg p-3">
+            <h2 className="font-bold">Product Name: {product.title}</h2>
             <p>price: {product.price}</p>
             <p>Features: 
                 {product.features.map((feature, index) => (
