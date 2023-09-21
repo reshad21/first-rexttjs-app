@@ -18,11 +18,11 @@ const sidebarItems = [
 const Sidebar = () => {
     return (
         <div>
-            <ul className="w-[150px]">
+            <ul className="w-[150px] flex flex-col gap-2">
                 {
                     sidebarItems.map(({ path, title }) => (
                         <li key={path}>
-                            <Link href={path}>{title}</Link>
+                            <Link href={path} className="border border-green-700 shadow-xl block py-2 text-center">{title}</Link>
                         </li>
                     ))
                 }

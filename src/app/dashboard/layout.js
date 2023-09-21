@@ -6,7 +6,7 @@ export const metadata = {
 }
 const DashboardLayout = ({ children }) => {
     return (
-        <div className="flex gap-2 ">
+        <div className="flex gap-8 ">
             <Sidebar></Sidebar>
             {children}
         </div>
