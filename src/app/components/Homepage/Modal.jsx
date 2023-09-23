@@ -1,7 +1,8 @@
 import { forwardRef, useRef } from "react";
 
-const Modal = ({ closeModal, updateData }, ref) => {
-    const formRef = useRef(null)
+const Modal = ({ closeModal, updateData, handleModalForm }, ref) => {
+    const formRef = useRef(null);
+
     return (
         <dialog ref={ref} className="w-[98%] max-w-[500px] rounded-md p-4">
             <div className="text-right mb-4">
@@ -10,10 +11,10 @@ const Modal = ({ closeModal, updateData }, ref) => {
                     formRef.current.reset();
                 }}>Close</button>
             </div>
-            <form ref={formRef}>
+            <form ref={formRef} onSubmit={handleModalForm}>
                 <input className="w-full mb-2 p-2 focus:outline-none border rounded-sm font-semibold" type="text" name="title" defaultValue={updateData?.title} />
-                <input className="w-full mb-2 p-2 focus:outline-none border rounded-sm font-semibold" type="text" name="title" defaultValue={updateData?.price} />
-                <button className="text-white px-2 py-1 rounded-md bg-lime-500 ">Submit</button>
+                <input className="w-full mb-2 p-2 focus:outline-none border rounded-sm font-semibold" type="text" name="price" defaultValue={updateData?.price} />
+                <button className="text-white px-2 py-1 rounded-md bg-lime-500" type="submit">Submit</button>
             </form>
         </dialog>
 
